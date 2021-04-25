@@ -1,0 +1,58 @@
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col">
+            <form action="/" method="post">
+            <div class="form">
+                <input
+                name="cidadeDigitada" 
+                placeholder="Digite o nome da cidade">
+        
+                <button class="btn btn-success" type="submit">Pesquisar</button>
+            </div>
+                <div class="container mt-4">
+
+                    
+                    {{#if error}}
+                    <div class="alert alert-danger">
+                        <p>Cidade não existe</p>
+                    </div>
+                    
+                    {{else}}
+                    <div class="container">
+                        <div class="card">
+                            <div class="card-body">
+                                <p>Dados Metereológicos para a {{response.data.name}} - {{response.data.sys.country}}:</p>
+                                <hr>
+                                <p>-Temperatura Atual: {{response.data.main.temp}}ºC <br>
+                                -Temp Máxima: {{response.data.main.temp_max}}ºC <br>
+                                -Temp Minima: {{response.data.main.temp_min}}ºC <br>
+                                -Humidade: {{response.data.main.humidity}}% <br>
+                                -Clima: {{response.data.weather.[0].description}} 
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    {{/if}}
+                </div>
+            </form>
+        
+    </div>
+    
+    <div class="col">
+        <h1>Cidades Mais Pesquisadas</h1>
+        <hr>
+        {{#each cidades}}
+        <div class="card mt-4">
+            <div class="card-body">
+                <h4>Cidade {{dataValues.nome}} | Número de pesquisas: {{dataValues.numero}}</h4>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+  </div>
+</div>
+    
+    
+
