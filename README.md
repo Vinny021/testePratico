@@ -2,7 +2,8 @@
 
 <p align="center">Aplicação desenvolvida durante a etapa do teste prático</p>
 * Navegar até a pasta e executar o arquivo index.js (node index.js | nodemon index.js)
-```console
+* 
+console
 foo@bar:~$ whoami
 foo
-``` 
+ 
